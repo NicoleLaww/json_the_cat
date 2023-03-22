@@ -15,13 +15,15 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
-  it('returns a string saying "The breed does not exist.", via callback', () => {
+  it('returns a string saying "The breed does not exist.", via callback', (done) => {
     fetchBreedDescription('Frog', (err, desc) => {
       assert.equal(desc, null);
 
       const expectedErr = "The breed does not exist.";
 
       assert.equal(expectedErr, err);
+
+      done();
     });
   });
 });
